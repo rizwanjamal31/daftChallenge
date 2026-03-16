@@ -45,24 +45,20 @@ Scurvy was a devastating disease that affected sailors on long voyages. The cure
 
 ```{python}
 #| label: dag-1-1747
-#| echo: true
+#| echo: false
 
 import matplotlib.pyplot as plt
 import daft
-
-
 plt.figure(figsize=(8, 5))
 
 pgm = daft.PGM([8, 5], origin=[0, 0])
 
-pgm.add_node("lemons", "Lemons", 1.5, 2.5, observed=True, scale=2.7,
+pgm.add_node("lemons", "Lemons", 2.0, 2.5, observed=True, scale=1.8,
              plot_params={"fc": "yellow"})
-pgm.add_node("vitc", "Vitamin C", 4.0, 2.5, scale=3)
-pgm.add_node("scurvy", "Scurvy Prevention", 6.5, 2.5, observed=True, scale=4,
+pgm.add_node("scurvy", "Scurvy Prevention", 6.0, 2.5, observed=True, scale=3.5,
              plot_params={"fc": "lightgreen"})
 
-pgm.add_edge("lemons", "vitc")
-pgm.add_edge("vitc", "scurvy")
+pgm.add_edge("lemons", "scurvy")
 
 pgm.render()
 
@@ -81,7 +77,7 @@ plt.show()
 
 ```{python}
 #| label: dag-2-misguided
-#| echo: true
+#| echo: false
 
 
 import matplotlib.pyplot as plt
@@ -92,7 +88,7 @@ plt.figure(figsize=(8, 5))
 pgm = daft.PGM([8, 5], origin=[0, 0])
 
 pgm.add_node(
-    "acid", "Acid Causess", 1.7, 3.8,
+    "acid", "Acid Causes", 1.7, 3.8,
     scale=2.5,
     plot_params={"fc": "lightyellow"}
 )
@@ -128,7 +124,7 @@ plt.show()
 
 ```{python}
 #| label: dag-3-1928
-#| echo: true
+#| echo: false
 
 
 import matplotlib.pyplot as plt
@@ -172,7 +168,7 @@ Here's an example (see @fig-example-node) of how to create a professionally styl
 
 ```{python}
 #| label: fig-example-node
-#| echo: true
+#| echo: false
 #| fig-cap: "Example: Professional DAFT Node Styling"
 
 import daft
